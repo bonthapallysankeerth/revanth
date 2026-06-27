@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, Trophy } from "lucide-react";
-
+import { ChevronRight, Award, Trophy } from "lucide-react";
 function CTASection() {
   const handleScrollTo = (id) => {
     const target = document.querySelector(id);
@@ -9,14 +8,12 @@ function CTASection() {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
   return (
     <section className="py-20 relative overflow-hidden bg-gradient-to-r from-cricket-pitch to-cricket-emerald/40 border-y border-white/5">
       {/* Cinematic Radial Spotlight */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.06)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-48 h-48 bg-cricket-vibrant/5 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-48 h-48 bg-cricket-gold/5 rounded-full blur-[80px] pointer-events-none" />
-
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
         
         {/* Glow Badge */}
@@ -30,7 +27,6 @@ function CTASection() {
           <Trophy className="w-3.5 h-3.5" />
           Enroll for 2026 Season
         </motion.div>
-
         {/* Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +37,6 @@ function CTASection() {
         >
           ADMISSIONS ARE OPEN NOW
         </motion.h2>
-
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +47,6 @@ function CTASection() {
         >
           Start Your Cricket Journey Today
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +62,6 @@ function CTASection() {
             Apply Online
             <ChevronRight className="w-4.5 h-4.5 stroke-[3]" />
           </button>
-
           {/* Secondary Button */}
           <button
             onClick={() => handleScrollTo("#pricing")}
@@ -77,7 +70,6 @@ function CTASection() {
             View Pricing
           </button>
         </motion.div>
-
         {/* Brief sub-label info */}
         <motion.p 
           initial={{ opacity: 0 }}
@@ -88,10 +80,8 @@ function CTASection() {
         >
           * Limited slots available for weekend training batches. Fast track selection open.
         </motion.p>
-
       </div>
     </section>
   );
 }
-
 export default CTASection;

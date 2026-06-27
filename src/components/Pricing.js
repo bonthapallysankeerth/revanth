@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Flame, Star, Zap } from "lucide-react";
-
 const features = [
   "Batting Training & Net Practice",
   "Bowling Training & Action Drill",
@@ -10,7 +9,6 @@ const features = [
   "Match Practice & Simulation Games",
   "Tournament Preparation & Analysis"
 ];
-
 const plans = [
   {
     name: "Monthly Plan",
@@ -43,7 +41,6 @@ const plans = [
     description: "Ultimate intensive training for state, district, or professional league aspiration."
   }
 ];
-
 function Pricing() {
   const handleScrollTo = (id) => {
     const target = document.querySelector(id);
@@ -51,13 +48,11 @@ function Pricing() {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
   return (
     <section id="pricing" className="py-24 bg-cricket-dark relative overflow-hidden">
       {/* Background radial effects */}
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cricket-emerald/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-cricket-gold/5 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -90,7 +85,6 @@ function Pricing() {
             transition={{ duration: 0.6 }}
             className="h-1 w-24 bg-gradient-to-r from-cricket-gold to-cricket-golddark mx-auto rounded-full mb-6"
           />
-
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -101,7 +95,6 @@ function Pricing() {
             Premium and affordable plans to match your commitment levels. Save more with our long-term academy memberships.
           </motion.p>
         </div>
-
         {/* Pricing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {plans.map((plan, idx) => (
@@ -124,7 +117,6 @@ function Pricing() {
                   Most Popular
                 </span>
               )}
-
               {/* Top details */}
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -135,13 +127,11 @@ function Pricing() {
                     <plan.icon className={`w-5 h-5 ${plan.popular ? 'text-cricket-gold' : 'text-cricket-vibrant'}`} />
                   </div>
                 </div>
-
                 {/* Price Display */}
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="font-outfit font-black text-4xl sm:text-5xl text-white">{plan.price}</span>
                   <span className="text-gray-400 text-sm font-medium">/ {plan.period}</span>
                 </div>
-
                 {/* Offer Save Badge */}
                 {plan.save ? (
                   <span className="inline-block px-3 py-1 rounded-full bg-cricket-vibrant/10 border border-cricket-vibrant/25 text-[10px] font-bold text-cricket-vibrant uppercase tracking-wider mb-5">
@@ -150,14 +140,11 @@ function Pricing() {
                 ) : (
                   <div className="h-6 mb-5" /> // Spacer to align heights
                 )}
-
                 {/* Brief description */}
                 <p className="text-xs text-gray-400 leading-relaxed font-sans font-medium mb-6">
                   {plan.description}
                 </p>
-
                 <hr className="border-white/5 mb-6" />
-
                 {/* Core Curriculum Checklist */}
                 <ul className="flex flex-col gap-3.5 mb-8">
                   {features.map((feat, fIdx) => (
@@ -172,7 +159,6 @@ function Pricing() {
                   ))}
                 </ul>
               </div>
-
               {/* Action Button */}
               <button
                 onClick={() => handleScrollTo("#contact")}
@@ -187,10 +173,8 @@ function Pricing() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
 }
-
 export default Pricing;
