@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Calendar } from "lucide-react";
 
-import cricketImage from "../assets/images/cricket-player.jpg";
+import cricketVideo from "../assets/images/cricket-video.mp4";
 
 
 function Hero() {
@@ -13,15 +13,12 @@ function Hero() {
     const section = document.querySelector(id);
 
     if (section) {
-
       section.scrollIntoView({
         behavior: "smooth"
       });
-
     }
 
   };
-
 
 
   return (
@@ -38,15 +35,13 @@ function Hero() {
     >
 
 
+      {/* Video Background */}
 
-      {/* Background Image */}
-
-      <img
-
-        src={cricketImage}
-
-        alt="Cricket Player"
-
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         className="
         absolute
         inset-0
@@ -54,34 +49,33 @@ function Hero() {
         h-full
         object-cover
         "
+      >
 
-      />
+        <source
+          src={cricketVideo}
+          type="video/mp4"
+        />
 
+      </video>
 
 
 
       {/* Overlay */}
 
       <div
-
         className="
         absolute
         inset-0
         bg-black/70
         "
-
       />
-
-
 
 
 
 
       {/* Content */}
 
-
       <div
-
         className="
         relative
         z-10
@@ -90,66 +84,42 @@ function Hero() {
         px-6
         w-full
         "
-
       >
 
 
-
-
         <motion.div
-
 
           initial={{
             opacity:0,
             y:50
           }}
 
-
           animate={{
             opacity:1,
             y:0
           }}
 
-
           transition={{
             duration:0.8
           }}
 
-
-
-          className="
-          max-w-3xl
-          "
-
         >
 
 
-
-
           <h1
-
             className="
             text-5xl
             md:text-7xl
             font-black
             text-white
-            leading-tight
             "
-
           >
 
             MR FIRSTGEN
 
-            <br />
+            <br/>
 
-
-            <span
-
-              className="
-              text-yellow-400
-              "
-
-            >
+            <span className="text-yellow-400">
 
               CRICKET ACADEMY
 
@@ -160,19 +130,12 @@ function Hero() {
 
 
 
-
-
-
-
           <p
-
             className="
             mt-6
             text-xl
-            md:text-2xl
             text-gray-200
             "
-
           >
 
             Where Future Champions Are Built 🏆
@@ -182,30 +145,20 @@ function Hero() {
 
 
 
-
-
-
           <div
-
             className="
             flex
-            flex-col
-            sm:flex-row
             gap-5
             mt-10
+            flex-wrap
             "
-
           >
-
-
 
 
 
             <button
 
-
               onClick={() => handleScrollTo("#contact")}
-
 
               className="
               px-8
@@ -217,10 +170,7 @@ function Hero() {
               flex
               items-center
               gap-2
-              hover:scale-105
-              transition
               "
-
 
             >
 
@@ -228,20 +178,14 @@ function Hero() {
 
               <ChevronRight size={20}/>
 
-
             </button>
-
-
-
 
 
 
 
             <button
 
-
               onClick={() => handleScrollTo("#contact")}
-
 
               className="
               px-8
@@ -254,23 +198,16 @@ function Hero() {
               flex
               items-center
               gap-2
-              hover:bg-white
-              hover:text-black
-              transition
               "
-
 
             >
 
-
               <Calendar size={20}/>
 
-
-              Book Trial
+              Book Free Trial
 
 
             </button>
-
 
 
 
@@ -278,27 +215,18 @@ function Hero() {
 
 
 
-
-
         </motion.div>
-
-
-
 
 
       </div>
 
 
 
-
-
     </section>
-
 
   );
 
 }
-
 
 
 export default Hero;
