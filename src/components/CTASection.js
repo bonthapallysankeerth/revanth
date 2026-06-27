@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronRight,  Trophy } from "lucide-react";
+import { ChevronRight, Trophy } from "lucide-react";
 function CTASection() {
   const handleScrollTo = (id) => {
     const target = document.querySelector(id);
