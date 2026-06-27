@@ -12,28 +12,41 @@ function Hero() {
 
     const section = document.querySelector(id);
 
-    if(section){
+    if (section) {
+
       section.scrollIntoView({
-        behavior:"smooth"
+        behavior: "smooth"
       });
+
     }
 
   };
+
 
 
   return (
 
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="
+      relative
+      min-h-screen
+      flex
+      items-center
+      overflow-hidden
+      "
     >
 
 
-      {/* Hero Background Image */}
+
+      {/* Background Image */}
 
       <img
+
         src={cricketImage}
+
         alt="Cricket Player"
+
         className="
         absolute
         inset-0
@@ -41,26 +54,34 @@ function Hero() {
         h-full
         object-cover
         "
+
       />
 
 
 
-      {/* Dark Overlay */}
+
+      {/* Overlay */}
 
       <div
+
         className="
         absolute
         inset-0
         bg-black/70
         "
+
       />
+
+
 
 
 
 
       {/* Content */}
 
+
       <div
+
         className="
         relative
         z-10
@@ -69,34 +90,44 @@ function Hero() {
         px-6
         w-full
         "
+
       >
+
 
 
 
         <motion.div
 
+
           initial={{
             opacity:0,
-            y:60
+            y:50
           }}
+
 
           animate={{
             opacity:1,
             y:0
           }}
 
+
           transition={{
-            duration:0.9
+            duration:0.8
           }}
+
+
 
           className="
           max-w-3xl
           "
+
         >
 
 
 
+
           <h1
+
             className="
             text-5xl
             md:text-7xl
@@ -104,16 +135,20 @@ function Hero() {
             text-white
             leading-tight
             "
+
           >
 
             MR FIRSTGEN
 
-            <br/>
+            <br />
+
 
             <span
+
               className="
               text-yellow-400
               "
+
             >
 
               CRICKET ACADEMY
@@ -127,17 +162,20 @@ function Hero() {
 
 
 
+
+
           <p
+
             className="
             mt-6
             text-xl
             md:text-2xl
             text-gray-200
             "
+
           >
 
             Where Future Champions Are Built 🏆
-
 
           </p>
 
@@ -145,10 +183,10 @@ function Hero() {
 
 
 
-          {/* Buttons */}
 
 
           <div
+
             className="
             flex
             flex-col
@@ -156,13 +194,18 @@ function Hero() {
             gap-5
             mt-10
             "
+
           >
+
+
 
 
 
             <button
 
+
               onClick={() => handleScrollTo("#contact")}
+
 
               className="
               px-8
@@ -173,19 +216,17 @@ function Hero() {
               font-bold
               flex
               items-center
-              justify-center
               gap-2
               hover:scale-105
               transition
               "
 
+
             >
 
               Join Now
 
-              <ChevronRight
-                size={20}
-              />
+              <ChevronRight size={20}/>
 
 
             </button>
@@ -198,7 +239,9 @@ function Hero() {
 
             <button
 
+
               onClick={() => handleScrollTo("#contact")}
+
 
               className="
               px-8
@@ -210,19 +253,17 @@ function Hero() {
               font-bold
               flex
               items-center
-              justify-center
               gap-2
               hover:bg-white
               hover:text-black
               transition
               "
 
+
             >
 
 
-              <Calendar
-                size={20}
-              />
+              <Calendar size={20}/>
 
 
               Book Trial
@@ -238,7 +279,10 @@ function Hero() {
 
 
 
+
         </motion.div>
+
+
 
 
 
@@ -247,11 +291,14 @@ function Hero() {
 
 
 
+
     </section>
+
 
   );
 
 }
+
 
 
 export default Hero;
